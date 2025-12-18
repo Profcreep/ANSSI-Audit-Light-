@@ -1,4 +1,4 @@
-# Auteur : Pierrick B.
+# Auteur : Profcreep.
 # ANSSI light diagnostic
 # Python
 
@@ -254,3 +254,4 @@ close_button.grid(row=0, column=1, padx=15, pady=10, sticky="e")
 
 # ---------------- LANCEMENT ----------------
 app.mainloop()
+
