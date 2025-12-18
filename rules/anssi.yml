@@ -1,0 +1,44 @@
+# ANSSI Light Diagnostic - Règles
+# Auteur : Profcreep
+
+# Informations générales
+metadata:
+  version: 1.0
+  author: Profcreep
+  description: Mini Soft pour faire une pré-audit
+
+# Audit systèmes
+audit:
+  password_policy:
+    min_length: 12
+    complexity: true
+    history: 5
+  account_lockout:
+    threshold: 5
+    duration_minutes: 30
+  ssh:
+    permit_root_login: false
+    protocol: 2
+
+# Analyse logs
+logs:
+  syslog:
+    enabled: true
+    alert_on_failed_login: true
+  auth:
+    enabled: true
+    max_failed_attempts: 3
+
+# SOC / Monitoring
+soc:
+  enable_monitoring: true
+  alert_thresholds:
+    cpu_usage_percent: 90
+    disk_usage_percent: 80
+    memory_usage_percent: 85
+
+# Automatisation
+automation:
+  scan_interval_minutes: 60
+  auto_report: true
+  report_path: "../reports"
