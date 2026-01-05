@@ -1,4 +1,4 @@
-# Auteur : Profcreep.
+# Auteur : Pierrick B.
 # ANSSI light diagnostic
 # Python
 
@@ -26,7 +26,6 @@ from menu.soc import open_soc
 from menu.automation import open_automation
 
 from core.config import load_yaml, REPORTS_DIR
-
 from core.config import IMG_DIR, load_yaml
 
 rules = load_yaml()
@@ -90,7 +89,7 @@ def open_info():
 
     info_text = (
         f"Auteur : {meta.get('author', 'Profcreep')}\n"
-        f"Version : {meta.get('version', '0.3')}\n\n"
+        f"Version : {meta.get('version', '0.9')}\n\n"
         f"{meta.get('description', '')}"
     )
 
@@ -254,4 +253,3 @@ close_button.grid(row=0, column=1, padx=15, pady=10, sticky="e")
 
 # ---------------- LANCEMENT ----------------
 app.mainloop()
-

@@ -3,10 +3,7 @@ from core.context import get_context
 import json
 import math
 import os
-
-USER_DOCS = Path(os.getenv("USERPROFILE")) / "Documents" / "anssi"
-REPORT_DIR = USER_DOCS / "reports"
-REPORT_DIR.mkdir(exist_ok=True)
+from core.config import REPORTS_DIR
 
 SEVERITY_COLOR = {
     "✅": "#2ecc71",   # vert
@@ -222,6 +219,6 @@ new Chart(document.getElementById('sectionChart'), {{
 
         html += "</body></html>"
 
-        path = REPORT_DIR / f"{hostname}_{fname_date}.html"
+        path = REPORTS_DIR / f"{hostname}_{fname_date}.html"
         path.write_text(html, encoding="utf-8")
         return path

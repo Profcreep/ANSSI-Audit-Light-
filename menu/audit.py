@@ -24,13 +24,15 @@ def load_yaml():
 
 def is_domain_joined():
     try:
-        out = subprocess.check_output(
-            "wmic computersystem get domain",
-            shell=True, text=True
-        ).splitlines()
-        return out[1].strip().lower() != "workgroup"
+        cmd = (
+            'powershell -Command '
+            '"(Get-CimInstance Win32_ComputerSystem).PartOfDomain"'
+        )
+        out = subprocess.check_output(cmd, shell=True, text=True).strip()
+        return out.lower() == "true"
     except Exception:
         return False
+
 
 # ---------------- AUDIT FUNCTIONS ----------------
 
@@ -40,8 +42,10 @@ def audit_password_policy(rules):
 
     if is_domain_joined():
         results.append(("✅", "Password policy managed by Active Directory (recommended)", None))
-        results.append(("⚠️", "Domain password policy not verified locally", None))
+        results.append(("❌", "Domain password policy not verified locally", None))
         return results
+    else:
+        results.append(("❌", "La machine n'est pas dans le domaine !", None))
 
     try:
         out = subprocess.check_output("net accounts", shell=True, text=True)
@@ -64,6 +68,10 @@ def audit_account_lockout(threshold):
         results.append(("✅", "Account lockout managed by Active Directory", None))
         results.append(("⚠️", "Lockout threshold not verified locally", None))
         return results
+
+    else:
+        results.append(("⚠️", "La machine n'est pas dans le domaine !", None))
+
 
     try:
         out = subprocess.check_output("net accounts", shell=True, text=True)

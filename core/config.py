@@ -24,9 +24,10 @@ YAML_FILE = RULES_DIR / "anssi.yml"
 # ---------------- INIT ----------------
 def ensure_user_environment():
     """Crée l'arborescence utilisateur si absente"""
-    ANSSI_DIR.mkdir(exist_ok=True)
-    REPORTS_DIR.mkdir(exist_ok=True)
-    RULES_DIR.mkdir(exist_ok=True)
+    ANSSI_DIR.mkdir(parents=True, exist_ok=True)
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    RULES_DIR.mkdir(parents=True, exist_ok=True)
+
 
     # Copier le YAML par défaut s'il n'existe pas
     if not YAML_FILE.exists():
