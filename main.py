@@ -11,6 +11,7 @@ import os
 
 #Configuration + raccourci
 from core.config import IMG_DIR
+from core.config import RULES_DIR
 from core.report import Report
 
 #Backend Methode
@@ -89,7 +90,7 @@ def open_info():
 
     info_text = (
         f"Auteur : {meta.get('author', 'Profcreep')}\n"
-        f"Version : {meta.get('version', '0.9')}\n\n"
+        f"Version : {meta.get('version', '1.1')}\n\n"
         f"{meta.get('description', '')}"
     )
 
