@@ -17,4 +17,6 @@ Le script se présente avec 4 menus lisible individuellement ou en générant le
 
 (Ce logiciel ne remplace en aucun cas un audit complet, il sert simplement à pré-auditer et montrer quelques paramètres pouvant être améliorés).
 
-Je rajouterais peut-être d'autres fonctionnalités au fur et à mesure du temps. à noté qu'il peut y avoir quelques coquille ou erreurs lors du rapport. La machine n'est pas parfaite :)
+Je rajouterais peut-être d'autres fonctionnalités au fur et à mesure du temps. à noter qu'il peut y avoir quelques coquilles ou erreurs lors du rapport.
+
+La machine n'est pas parfaite :)
