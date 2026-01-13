@@ -20,3 +20,5 @@ Le script se présente avec 4 menus lisible individuellement ou en générant le
 Je rajouterais peut-être d'autres fonctionnalités au fur et à mesure du temps. à noter qu'il peut y avoir quelques coquilles ou erreurs lors du rapport.
 
 La machine n'est pas parfaite :)
+
+Fonctionne sous windows 10,11 et server.
