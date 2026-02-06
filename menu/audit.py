@@ -7,7 +7,6 @@ import os
 
 # ---------------- BACKEND ----------------
 BASE_DIR = Path(__file__).resolve().parent.parent
-#YAML_FILE = BASE_DIR / "rules" / "anssi.yml"
 USER_DOCS = Path(os.getenv("USERPROFILE")) / "Documents" / "anssi"
 YAML_FILE = USER_DOCS / "rules" / "anssi.yml"
 
@@ -286,3 +285,4 @@ def open_audit():
         command=win.destroy
     )
     close_button.pack(pady=8, padx=15, side="right")
+
